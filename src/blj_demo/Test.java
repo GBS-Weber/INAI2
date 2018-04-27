@@ -24,6 +24,8 @@ public class Test {
     private VBox root;
     private Scene scene;
     
+    private int testInt = 10;
+    
     public Test(BLJ_Demo master){
 //        Master wird direkt im Konstruktor übergeben
         this.master = master;
@@ -45,7 +47,6 @@ public class Test {
         
 //        2 Labels werden esrtellt und direkt im Konstruktor mit Text versehen
         Label lbl = new Label("Hallo");
-        Label lbl2 = new Label("Hallo nochmals");
 
 //        Es wird definniert was beim Click auf Button passieren soll
         btn.setOnMouseClicked((event) -> {
@@ -60,7 +61,7 @@ public class Test {
    
 //        Layout wird zusammengesetzt, entpricht dem "Draufziehen" im SceneBuilder
         box.getChildren().addAll(btn, btn2);
-        root.getChildren().addAll(box, lbl, lbl2);
+        root.getChildren().addAll(box, lbl);
         scene = new Scene(root);
         
     }
