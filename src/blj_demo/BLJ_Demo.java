@@ -8,9 +8,16 @@ package blj_demo;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -19,26 +26,17 @@ import javafx.stage.Stage;
  */
 public class BLJ_Demo extends Application {
     
+//    Deklaration der Fensterklasse
+    private Test testWindow;
+    
     @Override
     public void start(Stage primaryStage) {
-        
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
+//        Fensterklasse wird erstellt
+        testWindow = new Test(this);
         
         primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
+//        Hier greift die Hauptklasse auf die Fensterklasse zu und setzt deren Scene auf die Stage
+        primaryStage.setScene(testWindow.getScene());
         primaryStage.show();
     }
 
